@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="<!--@@var = lang-->">
+<head>
+
+    <!--@@include = ./meta.html-->
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <!-- gulp.js의 injection으로 대체해야됨 -->
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <!-- as-is :: mailchimp style embed -->
+    <!-- 클라이언트 네트웍 비용 절감 차원에서 sass converting 할때 직접 가져오도록 변경함 -->
+</head>
+<body>
+    <div class="preloading_image">
+        <!-- inject:image -->
+        <!-- endinject -->
+    </div>
+
+    <header id="header">
+        <h1><a href="#summary">TOKENOMIA.io</a></h1>
+
+        <nav>
+            <div class="main link">
+                <a href="#what-we-do">What we do?</a>
+                <a href="#service">Service</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <article id="content">
+
+        <section id="summary" class="summary">
+            <div class="container">
+            <!--@@placeholder = summary-->
+            </div>
+        </section>
+
+        <section id="service" class="service">
+            <div class="container">
+            <!-- @@placeholder = service -->
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+            <!-- @@placeholder = portfolio -->
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+            <!-- @@placeholder = contact -->
+            </div>
+        </section>
+
+    </article>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+        <!-- @@placeholder = footer -->
+        </div>
+    </footer>
+
+    <!-- !!!! concat으로 대체할것 -->
+    <!-- jquery cdn -->
+    <!-- gulp.js의 injection으로 대체해야됨 -->
+    <!-- inject:js -->
+    <!-- endinject -->
+</body>
+</html>
+
+
