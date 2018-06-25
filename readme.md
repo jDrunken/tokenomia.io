@@ -1,6 +1,6 @@
-# eosys.io static site builder
+# tokenomia.io static site builder
 
-gulp.js 기반의 task running으로 eosys.io 사이트를 building 합니다.
+gulp.js 기반의 task running으로 tokenomia.io 사이트를 building 합니다.
 
 ## 개발/배포환경 설정
 
