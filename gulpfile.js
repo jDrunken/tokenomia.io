@@ -146,6 +146,31 @@ gulp.task('html',function () {
         .pipe(livereload());
 });
 
+// scss 변환 :: local
+gulp.task('convert:sass:sourcemap', function () {
+
+    return gulp.src(path.source.style + '/**/style.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }))
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        })
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie 11'],
+            expand: true,
+            flatten: true
+        }))
+        .pipe(base64({
+            maxImageSize: 120*1024                                  // bytes,
+        }))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(path.deploy + '/css'))
+        .pipe(livereload());
+});
+
 
 // scss 변환 :: deploy, sass > hack
 gulp.task('convert:sass', function () {
@@ -185,7 +210,7 @@ gulp.task('copy:image', function () {
 gulp.task('default', ['help']);
 
 gulp.task('local', function () {
-    runSequence('clean','html','copy:image',['connect','watch']);
+    runSequence('clean','html','copy:image','convert:sass:sourcemap',['connect','watch']);
 });
 
 // 이게 거의 최종본

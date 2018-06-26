@@ -1,0 +1,114 @@
+// header styling
+header {
+    box-sizing:border-box;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:10;
+
+    // 이건 애니메이션이랑 섞어서 생각해봐야 되는거 아니냐?
+    transition:all 0.1s;
+
+
+    .wrapper {
+
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+        @include media ('<700px') {
+            padding:0;
+            height:56px;
+            margin:0 20px;
+        }
+
+    }
+}
+
+header h1 a {
+
+    display:block;
+
+    background-color:#600;
+    background-repeat:no-repeat;
+    background-size:cover;
+
+
+    @include ir();
+
+    width:184px;
+    height:42px;
+}
+
+nav {
+    a {
+        display:inline-block;
+        font-size:rem(14);
+        color:#3a4961;
+        margin-left:40px;
+
+        &:first-child {
+            margin-left:0;
+        }
+
+        &.viewing {
+            font-weight:700;
+        }
+    }
+}
+
+
+
+// 버거 메뉴
+@include media ('>=700px') {
+    .bugger {
+        display:none;
+    }
+}
+
+@include media ('<700px') {
+    .bugger {
+
+        width: 20px;
+        height: 16px;
+        position: relative;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        outline:0;
+        -webkit-tap-highlight-color: transparent;
+
+
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #d3531a;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+            background: linear-gradient(to right, #47e1fd, #b827fb);
+        }
+
+        span:nth-child(1) {
+            top: 0px;
+        }
+
+        span:nth-child(2) {
+            top: 50%;
+            transform:translateY(-50%);
+        }
+
+        span:nth-child(3) {
+            bottom: 0;
+        }
+
+    }
+
+    header.invert .bugger span {
+        background:#808080;
+    }
+}

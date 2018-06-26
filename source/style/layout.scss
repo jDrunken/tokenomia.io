@@ -1,0 +1,68 @@
+
+article .link_group {
+    a {
+        display:inline-block;
+    }
+}
+
+
+footer,
+article {
+    .wrapper {
+        max-width:1280px;
+    }
+}
+
+header .wrapper {
+    padding:0 48px;
+    margin:0 auto;
+    height:90px;
+}
+
+
+article {
+
+    margin-top:90px;
+
+    // @include media('<=min') {
+    //     padding-bottom:96px;
+    // }
+
+    // @include media('>=max') {
+    //     padding-bottom:177px;
+    // }
+
+    > section {
+        box-sizing:border-box;
+        padding-left:20px;
+        padding-right:20px;
+
+        > .wrapper {
+            margin:0 auto;
+            padding:263px 0;
+
+            // 상하 여백
+            @include media ('<900px') {
+                padding:100px 0;
+            }
+
+            @include media ('<600px') {
+                padding:49px 0;
+            }
+        }
+    }
+}
+
+article .faq,
+article .team,
+article .advisor {
+    .wrapper {
+        padding-bottom:0;
+    }
+}
+
+article .more_info {
+    .wrapper {
+        padding-top:73px;
+    }
+}

@@ -1,0 +1,73 @@
+@charset 'UTF-8';
+
+section.portfolio {
+    padding:144px 0;
+
+    h2,h2+p {
+        margin:0 auto;
+        text-align:center;
+    }
+
+    h2 {
+        font-size:rem(32);
+        font-weight:300;
+        color:#000;
+    }
+
+    h2 + p {
+        margin-top:24px;
+        width:550px / 948px * 100%;
+        max-width:550px;
+        line-height:1.7;
+    }
+
+    .card_view {
+        margin-top:144px;
+
+        display:flex;
+        flex-flow:row wrap;
+
+        div {
+            box-sizing:border-box;
+            position:relative;
+
+            vertical-align:top;
+            font-size:rem(14);
+            // display:inline-block;
+            width:400px;
+            height:480px;
+
+            background:#273e56;
+            margin:8px;
+
+            padding:40px;
+
+            color:#fff;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-flow:column;
+
+            flex:1 1 400px;
+
+            p  {
+                line-height:1.71;
+            }
+
+            a.go.button {
+                width:162px;
+                height:56px;
+                line-height:56px;
+                border-radius:2px;
+                margin:48px auto 0;
+
+                font-size:rem(16);
+
+                border:1px solid #fff;
+                color:#fff;
+
+            }
+        }
+    }
+}

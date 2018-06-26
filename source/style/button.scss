@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/* button view element declaration by 신진훈
+ */
+button,
+a.button,
+input[type='submit'] {
+    // reset
+    cursor:pointer;
+    border-width:0;
+    border-style:solid;
+    border-color:transparent;
+
+    font-family:inherit;
+    background:transparent;
+
+    appearance:none;
+
+    display:inline-block;
+    line-height:1.1;
+    box-sizing:border-box;
+    text-align: center;
+    font-family:inherit;
+    border-radius:0;
+    padding:0;
+
+    &:first-letter {
+        text-transform:uppercase;
+    }
+}
+
+button,
+a.button,
+input[type='submit'] {
+    &[disabled] {
+        cursor:not-allowed;
+        opacity:0.5;
+    }
+}
+
+// size
+button,
+a.button,
+input[type='submit'] {
+    &.middle {
+        padding:0 16px;
+        line-height:38px;
+        border-width:1px;
+        min-width:84px;
+        font-size:rem(14);
+    }
+
+    &.size_small {
+        padding:0 10px;
+        line-height:30px;
+        border-width:1px;
+        font-size:rem(12);
+    }
+}
+
+
+// color
+button,
+a.button,
+input[type='submit'] {
+    // 컬러셋 지정 :: 전경색_배경색
+    &.lightblue_transparent {
+        border-color:#448aff;
+        color:#448aff;
+        transition:all ease-in-out 300ms;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-color:#448aff;
+            background-color:#448aff;
+            color:#fff;
+        }
+    }
+
+    &.white_lightblue {
+        border-color:#448aff;
+        color:#fff;
+        background-color:#448aff;
+    }
+
+    &.white_transparent  {
+        border-color:#fff;
+        color:#fff;
+        background-color:transparent;
+    }
+
+    &.white_darkgray {
+        background-color:#4a4a4a;
+        border-color:#4a4a4a;
+        color:#fff;
+    }
+
+    &.darkgray_transparent {
+        background-color:transparent;
+        border-color:#4a4a4a;
+        color:#4a4a4a;
+        transition:all 0.2s ease-in-out;
+
+        &:hover {
+            background-color:#4a4a4a;
+            border-color:#4a4a4a;
+            color:#fff;
+        }
+    }
+}
+
+// background image
+button,
+a.button {
+    &.bg_icon {
+
+        background-repeat:no-repeat;
+        background-position:center left;
+
+        &:before,
+        &:after {
+            content:'';
+            background-repeat:no-repeat;
+            background-position:center left;
+        }
+
+        &.add {
+            &:before {
+                content:'+ ';
+            }
+        }
+
+        &.view_detail {
+            // !!!! 여기에 '+' 이미지 넣어야돼!
+        }
+
+        &.view_more {
+            // fold / unfold 되는 이미지 뭉치 추가할것
+            // inter-action declaralation
+            // fold - unfold?
+            &.fold {
+                position:relative;
+                padding-left:23px;
+
+                &:before {
+                    display:block;
+                    width:10px;
+                    height:5px;
+                    background-image:url('../image/icon_arrow_dropdown_lightblue_transparent_8_5.png');
+                    background-size:cover;
+                    background-position:left top;
+                    position:absolute;
+                    top:50%;
+                    transform:translateY(-50%);
+                    left:10px;
+                }
+                &.un:before {
+                    transform: scale(-1, -1) translateY(50%);
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color:transparent;
+                    color:#448aff;
+                }
+            }
+        }
+    }
+}
+
+// image only
+button,
+a.button {
+    // 이미지만 표시하는 버튼들은 모두 Icon으로 표시한다.
+    &.icon {
+        text-indent:-999em;
+        background-repeat:no-repeat;
+        background-color:transparent;
+        background-position:left center;
+    }
+}
+
+
+// 예외 케이스
+button.extra.scroll {
+    position:absolute;
+    bottom:122px;
+    font-family:$em-font;
+    font-size:rem(14);
+    color:#fff;
+
+    &:after {
+        content:'';
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+        bottom:-50px;
+        display:block;
+        width:17px;
+        height:28px;
+        background:url('../image/icon_mouse_white_transparent_17_28.png') bottom center no-repeat transparent;
+        background-size:17px 28px;
+    }
+}
+
+
+// --------------------------------------------------------------------------------
+// 버튼영역에 대한 정의
+// --------------------------------------------------------------------------------
+
+.btn_area {
+    text-align:center;
+}
+
+

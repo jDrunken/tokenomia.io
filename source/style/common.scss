@@ -1,0 +1,39 @@
+// 섹션 타이틀
+h2 {
+    font-family:$em-font;
+    color:#4a4a4a;
+    font-weight:600;
+    &:first-letter {
+        text-transform:uppercase;
+    }
+
+    font-size:rem(28);
+
+    @include media ('<600px') {
+        font-size:rem(18);
+    }
+}
+
+// mod + al
+.barrior {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 99; /* Higher than anything else in the document */
+    background-color:#fff;
+
+    transition:opacity 0.3s ease-in-out;
+
+    &.remove {
+        opacity:0;
+    }
+}
+
+// 섹션별 설명과 타이틀
+section .description {
+    font-size:rem(14);
+    font-weight:300;
+    color:#333;
+}

@@ -1,0 +1,47 @@
+@charset 'UTF-8';
+
+section.summary {
+
+    background-color:#600;
+
+    .wrapper {
+        display:flex;
+        align-items:center;
+        height:640px;
+        padding:0;
+        position:relative;
+    }
+
+    h2 {
+        @include screen_reader();
+    }
+
+    // description
+    h2 + p {
+        color:#fff;
+        font-size:rem(28);
+        font-weight:300;
+        width:630px / 946px * 100%;
+
+        font-weight:300;
+    }
+
+    a.contact {
+        $size:200px;
+
+        display:block;
+        background-color:#062e56;
+        box-sizing:border-box;
+        color:#fff;
+        font-size:rem(20);
+
+        padding:32px 24px;
+
+        position:absolute;
+        bottom:-$size / 2;
+        right:0;
+
+        width:$size;
+        height:$size;
+    }
+}
