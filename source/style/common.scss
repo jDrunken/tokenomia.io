@@ -37,3 +37,11 @@ section .description {
     font-weight:300;
     color:#333;
 }
+
+div, section {
+    &.image.layout.full_width {
+        width:100%;
+        height:33vw;
+        background:#faa;
+    }
+}

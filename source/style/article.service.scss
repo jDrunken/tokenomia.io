@@ -1,23 +1,20 @@
 @charset 'UTF-8';
 
-section.service {
+section.what_we_do {
+    $max : 788px;
 
     .wrapper {
-        padding:175px;
+        padding:144px 0;
+        max-width:$max;
     }
 
     h2 {
-        @include screen_reader();
-    }
-
-    h3 {
         font-size:rem(32);
         font-weight:300;
-        width:320px / 946px * 100%;
+        width:290px;
         line-height:1.4;
     }
-
-    h3 + p {
+    h2 + p {
         font-size:rem(14);
         line-height:1.6;
         color:#3a4961;
@@ -30,45 +27,57 @@ section.service {
         }
     }
 
-    ol {
-        margin:0;
-        padding:0;
+}
 
-        counter-reset:service;
+section.service {
 
-        li {
-            margin:0;
-            padding:0;
-            list-style-type:none;
+    // 각기 width가 달라 세부 설정에서 처리하기로 함
+    $max : 1100px;
 
-            &:before {
-                content:"0" counter(service);
-                counter-increment:service;
-
-                color:#7090ee;
-                font-size:rem(44);
-                font-weight:300;
-
-                display:block;
-                line-height:1.1;
-
-                margin-bottom:32px;
-            }
-        }
+    .wrapper {
+        padding:144px 0;
+        max-width:$max;
     }
 
-    ol li {
-        h4 {
-            font-size:rem(28);
-            font-weight:300;
-            color:#3a4961;
+    h2 {
+          font-size: rem(32);
+          font-weight: 300;
+          text-align: center;
+          color: #000000;
+          line-height:1.6;
+          margin-bottom:144px - 96px;
+    }
+
+    h3 {
+        font-size: rem(28);
+        font-weight: 300;
+        color: #3a4961;
+    }
+
+    h3 + p {
+        margin-top:24px;
+        font-size:rem(14);
+        color:#666;
+        line-height:1.71;
+    }
+
+    .container.column.view {
+        overflow:hidden;
+        box-sizing:border-box;
+
+        > div {
+            box-sizing:border-box;
+            width:485px;
+            margin-top:96px;
+            padding-left:82px + 55px;
         }
 
-        p  {
-            margin-top:24px;
-            font-size:rem(14);
-            color:#666;
-            line-height:1.71;
+        > div:nth-child(2n) {
+            float:left;
+        }
+
+        > div:nth-child(2n+1) {
+            float:right;
         }
     }
 }
