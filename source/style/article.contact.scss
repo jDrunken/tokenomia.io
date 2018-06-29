@@ -2,11 +2,11 @@
 
 section.contact {
     .wrapper {
-        padding:231px 0;
+        padding:183px 0;
     }
 
     h2 {
-        @include ir();
+        @include screen_reader();
     }
     h3 {
         font-size:rem(32);
@@ -28,10 +28,24 @@ section.contact {
 
     h3 + p > a  {
         display:block;
-        margin-top:48px;
-        color:#000;
+        margin-top:24px;
+        color:#062e56;
 
         font-weight:700;
         font-size:rem(20);
     }
+}
+
+section.contact.title {
+    background:url('../image/3.jpg') 55% 55% no-repeat;
+    background-size:cover;
+}
+
+a.ci.telegram {
+    @include ir();
+    background:url('../image/icon-telegram-white@3x.png');
+    background-size:cover; 
+    width:24px;
+    height:24px;
+    margin:24px auto 0;
 }

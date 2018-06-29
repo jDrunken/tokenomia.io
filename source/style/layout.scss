@@ -45,3 +45,23 @@ article {
         }
     }
 }
+
+section.title {
+    height:33.3vw;
+    min-height:280px;
+    max-height:640px;
+
+    .wrapper {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        height:inherit;
+        max-height:inherit;
+        padding:0;
+    }
+
+    h2, p {
+        color:#fff;
+    }
+
+}

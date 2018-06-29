@@ -2,9 +2,11 @@
 
 section.summary {
 
-    background-color:#600;
+    background:linear-gradient(rgba(0,0,0,0.7)), url('../image/img.png') center center no-repeat;
+    background-size:cover;
 
     .wrapper {
+        margin-top:90px;
         max-width:1200px;
         display:flex;
         align-items:center;
@@ -31,7 +33,6 @@ section.summary {
         $size:200px;
 
         display:block;
-        background-color:#062e56;
         box-sizing:border-box;
         color:#fff;
         font-size:rem(20);
@@ -44,5 +45,20 @@ section.summary {
 
         width:$size;
         height:$size;
+
+        background-color: #062e56;
+        box-shadow: 0 24px 64px 0 rgba(0, 0, 0, 0.4); 
+
+        &:after {
+            position:absolute;
+            bottom:33px;
+            left:24px;
+            content:'';
+            display:block;
+            background:url('../image/icon-arrow.png') center center no-repeat transparent;
+            width:13px;
+            height:18px;
+            object-fit:contain;
+        }
     }
 }

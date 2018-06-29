@@ -3,7 +3,6 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     border: 0 none;
 }
 
-
 body {
     margin: 0 auto;
     font-size: 100%;
@@ -83,7 +82,10 @@ iframe {
 }
 
 // typo
-em {
+address, em {
     font-style:normal;
+}
+
+em {
     font-weight:500;
 }

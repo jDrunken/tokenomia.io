@@ -3,6 +3,7 @@
 section.portfolio {
     .wrapper {
         padding:144px 0;
+        width:1200px;
     }
 
     h2,h2+p {
@@ -13,7 +14,6 @@ section.portfolio {
     h2 {
         font-size:rem(32);
         font-weight:300;
-        color:#000;
     }
 
     h2 + p {
@@ -22,7 +22,6 @@ section.portfolio {
     }
 
     .card.view.container {
-        margin-top:144px;
 
         text-align:center;
 
@@ -40,15 +39,15 @@ section.portfolio {
             vertical-align:top;
             font-size:rem(14);
             width:342px;
-            height:480px;
+            height:434px;
 
             display:inline-block;
 
             margin:8px;
-            padding-top:48px;
+            padding-top:30px;
 
             p  {
-                margin:48px 40px 0;
+                margin:24px 27px 0;
                 line-height:1.71;
                 color:#666;
             }
@@ -80,7 +79,73 @@ section.portfolio {
 
             a.contact_to {
                 line-height:1.7;
+                display:block;
+                position:relative;
+
+                padding-top:125px;
+
+                color:#333;
+
+                &:before {
+                    position:absolute;
+                    top:0;
+                    left:50%;
+                    transform:translateX(-50%);
+                    content:'';
+                    background:url('../image/group-14@3x.png');
+                    background-size:100%;
+                    display:block;
+                    width:103px;
+                    height:103px;
+                }
+            }
+        }
+
+        > div {
+            h3 {
+                @include ir();
+
+                margin:0 auto;
+                background-repeat:no-repeat;
+                background-position:center center;
+                width:180px;
+                height:90px;
+            }
+
+
+            &.liter h3 {
+                background-image:url('../image/41@3x.png');
+                background-size:contain;
+            }
+
+            &.amo h3 {
+                background-image:url('../image/21@3x.png');
+                background-size:contain;
+            }
+
+            &.cloudbric h3 {
+                background-image:url('../image/31@3x.png');
+                background-size:contain;
+            }
+
+            &.zper h3 {
+                background-image:url('../image/11@3x.png');
+                background-size:contain;
+            }
+
+            &.insureum h3 {
+                background-image:url('../image/51@3x.png');
+                background-size:contain;
+            }
+
+            &.contact {
+                padding-top:125px;
             }
         }
     }
+}
+
+section.portfolio.title {
+    background:linear-gradient(rgba(0,0,0,0.3)), url('../image/2.jpg') 50% 44% no-repeat;
+    background-size:150%;
 }

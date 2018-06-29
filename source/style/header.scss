@@ -6,26 +6,31 @@ header {
     left:0;
     right:0;
     z-index:10;
+    background:#ffff;
 
     // 이건 애니메이션이랑 섞어서 생각해봐야 되는거 아니냐?
     transition:all 0.1s;
 
 
     .wrapper {
-
         display:flex;
         align-items:center;
         justify-content:space-between;
-
-        @include media ('<700px') {
-            padding:0;
-            height:56px;
-            margin:0 20px;
-        }
-
     }
+
+    box-shadow: 0 2px 4px 0 rgba(102, 102, 102, 0.16);
 }
 
+// layout
+header {
+    h1 {
+        flex:1 0 0;
+    }
+
+    nav {
+        margin-left:80px;
+    }
+}
 header h1 a {
 
     display:block;
@@ -46,7 +51,7 @@ nav {
         display:inline-block;
         font-size:rem(14);
         color:#3a4961;
-        margin-left:40px;
+        font-weight:300;
 
         &:first-child {
             margin-left:0;
@@ -57,6 +62,10 @@ nav {
         }
     }
 }
+
+nav.link a { margin-left:40px; }
+nav.lang a { margin-left:16px; }
+
 
 
 
