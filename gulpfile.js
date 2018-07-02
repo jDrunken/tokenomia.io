@@ -196,6 +196,77 @@ gulp.task('copy:js',function () {
         .pipe(livereload());
 });
 
+npmDistExcludeJS = [
+    '*.map',
+    'src/**/*',
+    'examples/**/*',
+    'example/**/*',
+    'demo/**/*',
+    'spec/**/*',
+    'docs/**/*',
+    'tests/**/*',
+    'test/**/*',
+    'Gruntfile.js',
+    'gulpfile.js',
+    'package.json',
+    'package-lock.json',
+    'bower.json',
+    'composer.json',
+    'yarn.lock',
+    'webpack.config.js',
+    'README',
+    'LICENSE',
+    'CHANGELOG',
+    '*.yml',
+    '*.md',
+    '*.coffee',
+    '*.ts',
+    '*.scss',
+    '*.less',
+
+    'core.js',
+    'slim',
+    'assets',
+    // '*.css',
+    '*.gif',
+    'component.json',
+    'slick.jquery.json',
+    '*.rb',
+    '*.markdown',
+    '*.html',
+    'MakeFile',
+    '*.eot',
+    '*.ttf',
+    '*.woff',
+    '*.svg',
+    '*.png',
+    'slick',
+    'fonts'
+];
+
+gulp.task('copy:node_modules',function () {
+    return gulp.src(
+            npmDist({
+                copyUnminified : false,
+                slimexcludes : npmDistExcludeJS          // only import jquery
+            }),
+            {base : './node_modules'}
+        )
+        .pipe(rename(function(path) {
+                path.dirname = '';
+            }))
+        .pipe(gulp.dest(path.deploy + '/js'))
+        .pipe(livereload());
+});
+
+
+// conference file copy :: local, deploy 공통
+gulp.task('copy:conf',function () {
+    return gulp.src(path.source.conf + '/*')
+        .pipe(gulp.dest(path.deploy))
+        .pipe(livereload());
+});
+
 
 // image :: local, copy & injection
 gulp.task('copy:image', function () {
@@ -210,14 +281,8 @@ gulp.task('copy:image', function () {
 gulp.task('default', ['help']);
 
 gulp.task('local', function () {
-    runSequence('clean','html','copy:image','convert:sass:sourcemap',['connect','watch']);
+    runSequence('clean','copy:image','convert:sass:sourcemap','copy:conf','html',['copy:js','copy:node_modules'],['connect','watch']);
 });
-
-// 이게 거의 최종본
-// gulp.task('local', function () {
-//     runSequence('clean','copy:image','convert:sass:sourcemap','copy:conf','html',['copy:js','copy:node_modules'],['connect','watch']);
-// });
-
 
 gulp.task('deploy',function () {
     runSequence('clean','copy:image','convert:sass','copy:conf','html',['copy:js','copy:node_modules'],'release');

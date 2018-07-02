@@ -4,17 +4,38 @@ section.what_we_do {
     $max : 788px;
 
     .wrapper {
-        padding:144px 0;
         max-width:$max;
+
+        padding:144px 0;
+
+        @include media ('<670px') {
+            padding:91px 0 67px;
+        }
     }
 
+
     h2 {
-        font-size:rem(32);
         font-weight:300;
         width:290px;
         line-height:1.4;
         position:relative;
+        font-size:rem(32);
         margin-bottom:64px;
+
+        @include media ('<900px') {
+            width:auto;
+            font-size:rem(24);
+        }
+
+        @include media ('<670px') {
+            margin-bottom:24px;
+        }
+
+        @include media ('<480px') {
+            br {
+                display:none;
+            }
+        }
     }
 
     h2:before {

@@ -2,18 +2,36 @@
 
 section.contact {
     .wrapper {
-        padding:183px 0;
+
+        // 상하 여백
+        @include media ('>1200px') {
+            padding:183px 0;
+        }
+
+        @include media ('<600px') {
+            padding:64px 0;
+        }
     }
 
     h2 {
         @include screen_reader();
     }
+
     h3 {
-        font-size:rem(32);
         font-weight:300;
         text-align:center;
 
         color:#000;
+
+        font-size:rem(32);
+
+        @include media ('<900px') {
+            font-size:rem(24);
+        }
+
+        @include media ('<670px') {
+            margin-bottom:24px;
+        }
     }
 
     h3 + p {
@@ -24,6 +42,12 @@ section.contact {
 
         margin-top:24px;
         color:#333;
+
+        @include media ('<480px') {
+            br {
+                display:none;
+            }
+        }
     }
 
     h3 + p > a  {
@@ -33,6 +57,14 @@ section.contact {
 
         font-weight:700;
         font-size:rem(20);
+
+        @include media ('<670px') {
+            font-size:rem(18);
+        }
+
+        @include media ('<500px') {
+            font-size:rem(16);
+        }
     }
 }
 
@@ -41,11 +73,11 @@ section.contact.title {
     background-size:cover;
 }
 
-a.ci.telegram {
-    @include ir();
-    background:url('../image/icon-telegram-white@3x.png');
-    background-size:cover; 
-    width:24px;
-    height:24px;
-    margin:24px auto 0;
-}
+// a.ci.telegram {
+//     @include ir();
+//     background:url('../image/icon-telegram-white@3x.png');
+//     background-size:cover; 
+//     width:24px;
+//     height:24px;
+//     margin:24px auto 0;
+// }

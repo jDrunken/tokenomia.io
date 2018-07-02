@@ -1,18 +1,27 @@
 @charset 'UTF-8';
 
-section.summary {
+.summary {
 
     background:linear-gradient(rgba(0,0,0,0.7)), url('../image/img.png') center center no-repeat;
     background-size:cover;
 
     .wrapper {
-        margin-top:90px;
-        max-width:1200px;
-        display:flex;
         align-items:center;
-        height:640px;
         padding:0;
         position:relative;
+
+        min-height:320px;
+        max-height:640px;
+        height:50vw;
+
+        display:flex;
+
+        max-width:1200px;
+        margin-top:90px;
+        @include media ('<900px') {
+            margin-top:50px;
+        }
+
     }
 
     h2 {
@@ -22,22 +31,49 @@ section.summary {
     // description
     h2 + p {
         color:#fff;
-        font-size:rem(28);
         font-weight:300;
-        width:630px / 946px * 100%;
+        max-width:630px;
 
         font-weight:300;
+
+        font-size:rem(28);
+
+        @include media ('<900px') {
+            line-height:1.5;
+            font-size:rem(24);
+        }
+
+        @include media ('<670px') {
+            line-height:1.7;
+            font-size:rem(20);
+        }
+
+        @include media ('<540px') {
+            font-size:rem(18);
+        }
+
+        @include media ('<480px') {
+            font-size:rem(14);
+
+            br {
+                display:none;
+            }
+        }
+
     }
 
     a.contact {
-        $size:200px;
-
         display:block;
         box-sizing:border-box;
         color:#fff;
+
         font-size:rem(20);
 
-        padding:32px 24px;
+        $size:200px;
+        $top_bottom:32px;
+        $left_right:24px;
+
+        padding:$top_bottom $left_right;
 
         position:absolute;
         bottom:-$size / 2;
@@ -49,10 +85,28 @@ section.summary {
         background-color: #062e56;
         box-shadow: 0 24px 64px 0 rgba(0, 0, 0, 0.4); 
 
+        @include media ('<680px') {
+            $size:120px;
+            font-size:rem(14);
+            $top_bottom:16px;
+            $left_right:16px;
+            padding:$top_bottom $left_right;
+
+            position:absolute;
+            bottom:-$size / 2;
+            right:0;
+
+            width:$size;
+            height:$size;
+            box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.4); 
+
+        }
+
+
         &:after {
             position:absolute;
-            bottom:33px;
-            left:24px;
+            bottom:$top_bottom;
+            left:$left_right;
             content:'';
             display:block;
             background:url('../image/icon-arrow.png') center center no-repeat transparent;

@@ -3,7 +3,10 @@
 footer {
     padding:0 20px;
     background-color: #062e56;
-    height:264px;
+
+    min-height:150px;
+    height:27vw;
+    max-height:264px;
 
     display:flex;
     flex-direction:column;
@@ -16,14 +19,31 @@ footer {
 
     h2 {
         @include ir();
-        width:211px;
-        height:88px;
 
-        background:#600;
+        min-width:110px;
+        height:50px;
+        max-width:211px;
+
+        width:40vw;
+
+
+        background:url('../image/tokenomia-hor-w@3x.png') center center no-repeat;
+        background-size:contain;
+
     }
 
     address {
+        margin-top:19px;
         font-size:rem(14);
         color:#fff;
+        @include media ('<500px') {
+            font-size:rem(11);
+        }
+
+        @include media ('>400px') {
+            br {
+                display:none;
+            }
+        }
     }
 }

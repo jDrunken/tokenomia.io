@@ -1,9 +1,9 @@
 @charset 'UTF-8';
 
 section.portfolio {
+
     .wrapper {
-        padding:144px 0;
-        width:1200px;
+        max-width:1200px;
     }
 
     h2,h2+p {
@@ -14,19 +14,39 @@ section.portfolio {
     h2 {
         font-size:rem(32);
         font-weight:300;
+        margin-bottom:24px;
+
+        @include media ('<900px') {
+            font-size:rem(24);
+        }
+
+        @include media ('<670px') {
+            font-size:rem(20);
+        }
+
+        @include media ('<440px') {
+            line-height:1.7;
+        }
+
+        @include media ('>440px') {
+            br {
+                display:none;
+            }
+        }
     }
 
     h2 + p {
-        margin-top:24px;
         line-height:1.7;
+        @include media ('<630px') {
+            br {
+                display:none;
+            }
+        }
     }
 
     .card.view.container {
 
         text-align:center;
-
-        // display:flex;
-        // flex-flow:row wrap;
 
         > div {
             box-sizing:border-box;
@@ -38,10 +58,21 @@ section.portfolio {
 
             vertical-align:top;
             font-size:rem(14);
-            width:342px;
+            &:hover {
+                box-shadow: 0 48px 48px 0 rgba(0, 0, 0, 0.12);
+            }
+
+            width:100%;
+            max-width:342px;
             height:434px;
 
             display:inline-block;
+            @include media ('<500px'){
+                display:block;
+                height:auto;
+                padding-bottom:130px;
+                margin:8px 0;
+            }
 
             margin:8px;
             padding-top:30px;
@@ -53,12 +84,12 @@ section.portfolio {
             }
 
             a.go.button {
-
                 position:absolute;
                 bottom:0;
                 left:0;
                 right:0;
 
+                width:100%;
                 height:70px;
                 line-height:68px;
 
@@ -79,24 +110,22 @@ section.portfolio {
 
             a.contact_to {
                 line-height:1.7;
-                display:block;
+                display:inline-block;
                 position:relative;
-
-                padding-top:125px;
 
                 color:#333;
 
+                box-sizing:border-box;
+                text-align:center;
+
                 &:before {
-                    position:absolute;
-                    top:0;
-                    left:50%;
-                    transform:translateX(-50%);
                     content:'';
                     background:url('../image/group-14@3x.png');
                     background-size:100%;
                     display:block;
                     width:103px;
                     height:103px;
+                    margin:0 auto 24px;
                 }
             }
         }
@@ -139,7 +168,10 @@ section.portfolio {
             }
 
             &.contact {
-                padding-top:125px;
+                padding:136px 0;
+                @include media ('<500px'){
+                    padding:80px 0;
+                }
             }
         }
     }

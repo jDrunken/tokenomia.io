@@ -6,8 +6,14 @@ section.service {
     $max : 1100px;
 
     .wrapper {
-        padding:144px 0;
         max-width:$max;
+
+        padding-top:144px - 96px;
+        padding-bottom:144px;
+        @include media ('<790px') {
+            padding-top:64px;
+            padding-bottom:64px;
+        }
     }
 
     h2 {
@@ -16,7 +22,22 @@ section.service {
           text-align: center;
           line-height:1.6;
           margin-bottom:144px - 96px;
-    }
+
+          @include media ('<900px') {
+              font-size:rem(24);
+          }
+
+          @include media ('<670px') {
+              font-size:rem(20);
+              margin-bottom:24px;
+          }
+
+          @include media ('<480px') {
+              br {
+                  display:none;
+              }
+          }
+      }
 
     h3 {
         font-size: rem(28);
@@ -37,10 +58,16 @@ section.service {
         box-sizing:border-box;
 
         > div {
+            width:(100vw/2-7);
+            max-width:485px;
+
             box-sizing:border-box;
-            width:485px;
-            margin-top:96px;
             padding-left:82px + 55px;
+            margin-top:96px;
+
+            @include media ('<790px') {
+                margin-top:48px;
+            }
         }
 
         > div:nth-child(2n-1) {
@@ -63,12 +90,42 @@ section.service {
         > div:nth-of-type(2) { background-image:url('../image/icon-chart-presentation-retro-copy@3x.png'); }
         > div:nth-of-type(3) { background-image:url('../image/icon-chart-presentation-retro-copy-2@3x.png'); }
         > div:nth-of-type(4) { background-image:url('../image/icon-chart-presentation-retro-copy-3@3x.png'); }
+
+        // 반응형
+        @include media ('<790px') {
+            > div {
+                float:none !important;
+                width:auto;
+                max-width:none;
+
+                background-position:left top;
+            }
+        }
+
+        @include media ('<500px') {
+            > div {
+                background-position:center top;
+                padding-left:0;
+                padding-top:96px + 40px;
+
+                h3 + p {
+                    margin-top:24px;
+                }
+
+            }
+        }
+
     }
 }
 
 section.service.title {
     background:linear-gradient(rgba(0,0,0,0.3)), url('../image/1.jpg') 60% 45% no-repeat transparent;
     background-size:140%;
+
+    .wrapper {
+        padding-top:0;
+        padding-bottom:0;
+    }
 
     h2 {
         margin-bottom:24px;
@@ -77,5 +134,9 @@ section.service.title {
     h2 + p {
         font-size:rem(14);
         text-align:center;
+
+        @include media ('<50px') {
+            br {display:none;}
+        }
     }
 }

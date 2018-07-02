@@ -1,77 +1,60 @@
 <!DOCTYPE html>
 <html lang="<!--@@var = lang-->">
 <head>
-
     <!--@@include = ./meta.html-->
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
 
     <!-- !!!! gulp.js의 injection으로 대체해야됨. 한파일에서... 로딩하는걸로 변경해? -->
     <link rel="stylesheet" href="./css/style.css">
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
-    <div class="preloading_image">
-        <!-- inject:image -->
-        <!-- endinject -->
-    </div>
-
     <header id="header">
         <div class="wrapper">
-            <h1><a href="#summary">TOKENOMIA.io</a></h1>
-
-            <nav class="link">
-                <a href="#about" class="viewing">About</a>
-                <a href="#service">Service</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <nav class="lang">
-                <a href="index-ko.html">한글</a>
-                <a href="index-en.html">ENG</a>
-            </nav>
+        <!--@@placeholder = header-->
         </div>
     </header>
 
     <article id="content">
 
-        <section id="summary" class="summary">
+        <section id="about" class="summary">
             <div class="wrapper">
             <!--@@placeholder = summary-->
             </div>
         </section>
 
-        <section id="whatWeDo" class="what_we_do">
+        <section class="what_we_do">
             <div class="wrapper">
             <!-- @@placeholder = whatwedo -->
             </div>
         </section>
 
-        <section id="serviceTitle" class="service title">
+        <section id="service" class="service title">
             <div class="wrapper">
             <!-- @@placeholder = service_title -->
             </div>
         </section>
 
 
-        <section id="service" class="service">
+        <section class="service">
             <div class="wrapper">
             <!-- @@placeholder = service -->
             </div>
         </section>
 
-        <section id="PortfolioTitle" class="portfolio title">
+        <section id="portfolio" class="portfolio title">
             <div class="wrapper">
             <!-- @@placeholder = portfolio_title -->
             </div>
         </section>
 
-        <section id="portfolio" class="portfolio">
+        <section class="portfolio">
             <div class="wrapper">
             <!-- @@placeholder = portfolio -->
             </div>
         </section>
 
-        <section class="contact title">
+        <section id="contact" class="contact title">
         </section>
 
         <section class="contact">
@@ -93,6 +76,7 @@
     <!-- gulp.js의 injection으로 대체해야됨 -->
     <!-- inject:js -->
     <!-- endinject -->
+    <script src="js/js.js"></script>
 </body>
 </html>
 
