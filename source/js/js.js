@@ -29,7 +29,7 @@
             _isSetClassName = false;
 
             $('html,body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(hash).offset().top - $('#header').outerHeight()
             }, 350, function() {
                 _isSetClassName = true;
             });
@@ -52,25 +52,6 @@
 
 
     $(function (){
-        // 스크롤 위치에 따른 GNB color changing (by class binding)
-        // function headerInteraction (target,window,wall) {
-        //     var target = $(target)
-        //     ,   scrollPosition = parseInt($(window).scrollTop())
-        //     ,   changeScrollPosition = parseInt($(wall).outerHeight())
-        //     ;
-
-        //     scrollPosition > changeScrollPosition - 40 ?  target.addClass('invert') : target.removeClass('invert');
-        // }
-
-        // // 로딩시 바인딩
-        // headerInteraction($('#header'),$(window),$('#summary'))
-
-        // $(document).on('scroll', function(e) {
-        //     headerInteraction($('#header'),$(window),$('#summary'))
-
-        // }); 
-        
-        // 스크롤 위치에 따라서 link에 클래스 바인딩을 한다.
         var sectionHeight = (function (sectionGroup) {
             var sectionGroup
             ,   max = sectionGroup.length
@@ -84,13 +65,10 @@
                     result.push({
                         id : $(section).attr('id'),
                         position : {
-                            from : $(section).offset().top,
-                            to : (function (section) {
-                                console.log(section)
-                                // 지금 엘리먼트의 offset.top에서 다음 엘리먼트의 offset.top까지.
-                                // 만일 다음 엘리먼트가 없으면 문서 길이 전체를 취하면 된다.
-                                $(section).offset().top + $(section).outerHeight()
-                            })(section)
+                            from : $(section).offset().top - $('#header').outerHeight(),
+                            to : (function (next) {
+                                return $(next).length > 0 ? parseInt($(next).offset().top - $('#header').outerHeight()) : parseInt($(document).height())
+                            })($(section).closest('section').nextAll('section[id]:first'))
                         },
                         hash : (function (id){
                             return id === 'summary' ? null : '#'+id
@@ -98,6 +76,7 @@
                     })
                 }
             });
+            console.log(result);
             return result;
 
         })($('article > section'));
@@ -116,6 +95,22 @@
                     }
                 }
             }
+        });
+    });
+})(jQuery);
+
+
+// 모든 리소스가 로딩 된 후 화면 보여줌
+(function ($) {
+    $('body').addClass('loading');
+    $(window).on('load',function () {
+        $('#barrior').addClass('remove').on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+
+            // modal block 삭제
+            $('body').removeClass('loading').addClass('animate');
+            document.getElementById('barrior').outerHTML = '';
+
+            // body의 class 삭제
         });
     });
 })(jQuery);
