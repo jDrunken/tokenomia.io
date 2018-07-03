@@ -34,7 +34,7 @@ section.contact {
         }
     }
 
-    h3 + p {
+    h3 ~ * {
         font-size:rem(14);
         font-weight:300;
         text-align:center;
@@ -50,7 +50,17 @@ section.contact {
         }
     }
 
-    h3 + p > a  {
+    ol {
+        width:200px;    // !!!! 하... 이 값을 고정형으로 둬야되는건가...
+        margin:0 auto;
+
+        li  {
+            margin:0.6em 0;
+            text-align:left;
+        }
+    }
+
+    h3 ~ p > a  {
         display:block;
         margin-top:24px;
         color:#062e56;

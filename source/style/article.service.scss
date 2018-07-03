@@ -50,16 +50,28 @@ section.service {
         color:#666;
         line-height:1.71;
 
-        min-height:96px;
+        // min-height:calc(50000px / 348px);
+
+        // &:lang(en) {
+        //     min-height:165px;
+        // }
     }
 
     .container.column.view {
         overflow:hidden;
         box-sizing:border-box;
 
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:space-between;
+
+        @include media ('<900px') {
+            display:block;
+        }
         > div {
-            width:(100vw/2-7);
-            max-width:485px;
+            flex:0 0 47%;
+            // width:(100vw/2-7);
+            // max-width:485px;
 
             box-sizing:border-box;
             padding-left:82px + 55px;
@@ -70,13 +82,13 @@ section.service {
             }
         }
 
-        > div:nth-child(2n-1) {
-            float:left;
-        }
+        // > div:nth-child(2n-1) {
+        //     float:left;
+        // }
 
-        > div:nth-child(2n) {
-            float:right;
-        }
+        // > div:nth-child(2n) {
+        //     float:right;
+        // }
 
         // bg-image 처리
         > div {
@@ -94,10 +106,6 @@ section.service {
         // 반응형
         @include media ('<790px') {
             > div {
-                float:none !important;
-                width:auto;
-                max-width:none;
-
                 background-position:left top;
             }
         }

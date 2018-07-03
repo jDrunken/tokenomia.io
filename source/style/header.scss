@@ -15,7 +15,7 @@ header {
         display:flex;
         align-items:center;
         justify-content:space-between;
-
+        overflow-y:hidden;
     }
 
     box-shadow: 0 2px 4px 0 rgba(102, 102, 102, 0.16);
@@ -70,6 +70,10 @@ nav {
         color:#3a4961;
         font-weight:300;
 
+        &:first-letter {
+            text-transform:uppercase;
+        }
+
         &:first-child {
             margin-left:0 !important;
         }
@@ -90,6 +94,7 @@ nav.link a {
 }
 
 nav.lang a {
+    text-transform:uppercase;
     margin-left: 16px;
 
     &.ko:lang(ko){

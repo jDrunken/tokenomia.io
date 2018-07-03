@@ -65,17 +65,20 @@ section.portfolio {
             width:100%;
             max-width:342px;
             height:434px;
-
-            display:inline-block;
-            @include media ('<500px'){
-                display:block;
-                height:auto;
-                padding-bottom:130px;
-                margin:8px 0;
+            &:lang(en) {
+                height:500px;
             }
 
             margin:8px;
             padding-top:30px;
+
+            display:inline-block;
+            @include media ('<769px'){
+                display:block;
+                height:auto !important;
+                padding-bottom:130px;
+                margin:8px auto;
+            }
 
             p  {
                 margin:24px 27px 0;
@@ -181,3 +184,5 @@ section.portfolio.title {
     background:linear-gradient(rgba(0,0,0,0.3)), url('../image/2.jpg') 50% 44% no-repeat;
     background-size:150%;
 }
+
+
