@@ -275,6 +275,14 @@ gulp.task('copy:image', function () {
         .pipe(livereload());
 });
 
+// 배포
+gulp.task('release', function () {
+    return gulp.src(path.deploy + '/**/*')
+        .pipe(publish({
+            force : true,
+            message : 'TOKENomia :: 깃허브 페이지에 반영됨. Published to Github pages'
+        }))
+});
 // --------------------------------------------------------------------------------
 // pipe running
 // --------------------------------------------------------------------------------

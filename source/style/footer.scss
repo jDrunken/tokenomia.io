@@ -12,7 +12,7 @@ footer {
     flex-direction:column;
     justify-content:center;
 
-    h2,address {
+    h2,address,p {
         text-align:center;
         margin:0 auto;
     }
@@ -32,7 +32,7 @@ footer {
 
     }
 
-    address {
+    address,p {
         margin-top:19px;
         font-size:rem(14);
         color:#fff;

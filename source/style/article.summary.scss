@@ -32,11 +32,11 @@
     h2 + p {
         color:#fff;
         font-weight:300;
-        max-width:630px;
 
         font-weight:300;
 
         font-size:rem(28);
+        line-height:1.4;
 
         @include media ('<900px') {
             line-height:1.5;

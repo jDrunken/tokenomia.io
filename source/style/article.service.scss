@@ -127,8 +127,8 @@ section.service {
 }
 
 section.service.title {
-    background:linear-gradient(rgba(0,0,0,0.3)), url('../image/1.jpg') 60% 45% no-repeat transparent;
-    background-size:140%;
+    background:linear-gradient(rgba(0,0,0,0.3)), url('../image/1.jpg') 60% bottom no-repeat transparent;
+    background-size:cover;
 
     .wrapper {
         padding-top:0;
