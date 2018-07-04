@@ -37,7 +37,7 @@
     }
 
     $(function() {
-        $('#a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(e) {
+        $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(e) {
             $('#header a[href*="#"]').removeClass('viewing');
             $(this).addClass('viewing');
             smoothScrollTo(this.hash, e);
