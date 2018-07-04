@@ -143,7 +143,7 @@ section.service.title {
         font-size:rem(14);
         text-align:center;
 
-        @include media ('<50px') {
+        @include media ('<500px') {
             br {display:none;}
         }
     }
