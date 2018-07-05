@@ -76,7 +76,6 @@
                     })
                 }
             });
-            console.log(result);
             return result;
 
         })($('article > section'));
@@ -112,5 +111,27 @@
 
             // body의 class 삭제
         });
+    });
+})(jQuery);
+
+
+
+
+// --------------------------------------------------------------------------------
+// ios중 iPhone에서만 
+// 모바일 기준 : 320px;
+// --------------------------------------------------------------------------------
+(function ($) {
+    function isiPhone(){
+        return (
+            (navigator.platform.indexOf("iPhone") != -1)
+        );
+    }
+
+    $(function () {
+        // $('a[href*="#"]'):not.not('[href="#"]').not('[href="#0"]').click(function(e) {
+        if (isiPhone()) {
+            $('.portfolio a:not([href*="#"])').removeAttr('target');
+        }
     });
 })(jQuery);
