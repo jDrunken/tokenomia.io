@@ -109,10 +109,10 @@
             left:$left_right;
             content:'';
             display:block;
-            background:url('../image/icon-arrow.png') center center no-repeat transparent;
+            background:url('../image/icon-arrow@3x.png') center center no-repeat transparent;
+            background-size:contain;
             width:13px;
             height:18px;
-            object-fit:contain;
         }
     }
 }
