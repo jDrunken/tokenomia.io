@@ -64,9 +64,10 @@ section.portfolio {
 
             width:100%;
             max-width:342px;
-            height:434px;
+            height:490px;
+
             &:lang(en) {
-                height:500px;
+                height:520px;
             }
 
             margin:8px;
@@ -169,6 +170,12 @@ section.portfolio {
                 background-image:url('../image/51@3x.png');
                 background-size:contain;
             }
+
+            &.hara h3 {
+                background-image:url('../image/bi_hara.png');
+                background-size:contain;
+            }
+
 
             &.contact {
                 padding:136px 0;
