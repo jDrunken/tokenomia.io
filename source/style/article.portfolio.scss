@@ -3,7 +3,7 @@
 section.portfolio {
 
     .wrapper {
-        max-width:1200px;
+		max-width:1200px;
     }
 
     h2,h2+p {
@@ -46,11 +46,15 @@ section.portfolio {
 
     .card.view.container {
 
-        text-align:center;
+		text-align:center;
+
+		overflow:hidden;
+		margin:0 62px;
 
         > div {
             box-sizing:border-box;
             position:relative;
+			float:left;
 
             background-color: #ffffff;
             border: solid 1px #e2e2e2;
@@ -58,27 +62,34 @@ section.portfolio {
 
             vertical-align:top;
             font-size:rem(14);
+
             &:hover {
                 box-shadow: 0 48px 48px 0 rgba(0, 0, 0, 0.12);
             }
-
-            width:100%;
-            max-width:342px;
             height:490px;
+
 
             &:lang(en) {
                 height:520px;
             }
 
-            margin:8px;
+			margin:8px;
             padding-top:30px;
 
             display:inline-block;
-            @include media ('<769px'){
+
+			width:calc(100% / 3 - 8px * 2);
+
+			@include media ('<1100px') {
+				width:calc(100% / 2 - 8px * 2);
+			}
+
+            @include media ('<879px'){
                 display:block;
                 height:auto !important;
                 padding-bottom:130px;
                 margin:8px auto;
+				width:100%;
             }
 
             p  {
@@ -176,9 +187,14 @@ section.portfolio {
                 background-size:contain;
             }
 
+            &.steemhunt h3 {
+                background-image:url('../image/sh-logo-wide.png');
+                background-size:contain;
+            }
 
             &.contact {
                 padding:136px 0;
+				text-align:center;
                 @include media ('<500px'){
                     padding:80px 0;
                 }
