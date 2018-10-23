@@ -51,6 +51,31 @@ section.portfolio {
 		overflow:hidden;
 		margin:0 62px;
 
+		@include media ('<879px'){
+			margin:0 190px;
+		}
+
+		@include media ('<759px'){
+			margin:0 100px;
+		}
+
+		@include media ('<700px'){
+			margin:0 70px;
+		}
+
+		@include media ('<600px'){
+			margin:0 30px;
+		}
+
+		@include media ('<500px'){
+			margin:0 10px;
+		}
+
+		@include media ('<400px'){
+			margin:0;
+		}
+
+
         > div {
             box-sizing:border-box;
             position:relative;
@@ -91,6 +116,15 @@ section.portfolio {
                 margin:8px auto;
 				width:100%;
             }
+
+            @include media ('<600px'){
+                display:block;
+                height:auto !important;
+                padding-bottom:130px;
+                margin:8px auto;
+				width:100%;
+            }
+
 
             p  {
                 margin:24px 27px 0;
