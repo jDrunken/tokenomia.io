@@ -226,6 +226,16 @@ section.portfolio {
                 background-size:contain;
             }
 
+			&.moviebloc h3 {
+                background-image:url('../image/bi-moviebloclogo.png');
+                background-size:contain;
+			}
+
+			&.streaum h3 {
+                background-image:url('../image/bi-streaumlogo.png');
+                background-size:contain;
+			}
+
             &.contact {
                 padding:136px 0;
 				text-align:center;
