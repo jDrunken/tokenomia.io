@@ -29,3 +29,16 @@ gulp.js 기반의 task running으로 tokenomia.io 사이트를 building 합니�
 ## 실행 URL  
   
 주력 브라우저에서 <http://localhost:7080> 주소를 실행시킵니다.  
+
+------------------------------------------------------------
+
+## trouble shotting
+
+`ReferenceError: internalBinding is not defined` 이란 에러가 발생할 경우 natives 모듈을 수동으로 업그레이드 해줍니다.
+
+```
+❯ npm install natives@1.1.6
+```
+
+
+
