@@ -135,7 +135,7 @@ gulp.task('clean',function () {
 
 // html 처리
 gulp.task('html',function () {
-    return gulp.src(path.source.html + '/*.html')
+    return gulp.src(path.source.html + '/**/*.html')
         .pipe(extender({
             annotations: false,
             verbose: false

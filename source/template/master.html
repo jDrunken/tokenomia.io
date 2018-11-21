@@ -5,7 +5,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
 
     <!-- !!!! gulp.js의 injection으로 대체해야됨. 한파일에서... 로딩하는걸로 변경해? -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script>
     // 뭔가 injection 처리가 되어야 될거 같으다.
     (function () {
@@ -13,13 +13,13 @@
         var _1 = new Image();
         var _2 = new Image();
         var _3 = new Image();
-        img.src = './image/img.jpg'
-        _1.src = './image/1.jpg'
-        _2.src = './image/2.jpg'
-        _3.src = './image/3.jpg'
+        img.src = '/image/img.jpg'
+        _1.src = '/image/1.jpg'
+        _2.src = '/image/2.jpg'
+        _3.src = '/image/3.jpg'
     })();
     </script>
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
 </head>
 <body>
     <div id="barrior" class="barrior">&nbsp;</div>
@@ -96,7 +96,7 @@
     <!-- gulp.js의 injection으로 대체해야됨 -->
     <!-- inject:js -->
     <!-- endinject -->
-    <script src="js/js.js"></script>
+    <script src="/js/js.js"></script>
 </body>
 </html>
 
