@@ -135,3 +135,66 @@
         }
     });
 })(jQuery);
+
+
+
+// ------------------------------------------------------------
+// 뉴스 보여주기
+// ------------------------------------------------------------
+(function ($) {
+    // 데이터 세팅을 해야겠구나
+    var post = {
+        // static set
+        url : {
+			rss_url:'https://medium.com/feed/'+'cp-tokenomia'
+		},
+        api : 'https://api.rss2json.com/v1/api.json',
+        content : []
+    }
+
+    post.makeData = function (name,_array,target) {
+		$.each(_array.items, function (i, item) {
+			target.push({
+				title : item.title,
+				thumbnail : item.thumbnail,
+				link : item.link,
+				desc : item.description.replace(/<.+?>/gim,'').replace(/\t\n\r/gi,'').replace(/\s$/gi,'').substring(0,120) + '…'
+			});
+
+			if (target.length === 3) {
+				return false;           // 3개만 노출한다.
+			}
+        });
+        return target;
+    };
+
+    post.binding = function (_array) {
+        var item = _array;
+        var max = _array.length;
+        var dom = '';
+
+        for (var i=0; i<max; i++) {
+            dom += '<a href="' + item[i].link + '" >';
+            dom += '<span style="background-image:url(' + item[i].thumbnail + ');"></span>';
+            dom += '<h3>' + item[i].title + '</h3>';
+            dom += '<p>' + item[i].desc + '</p>';
+            dom += '</a>';
+        }
+
+        return dom;
+    };
+
+    post.get = $.get(post.api, post.url);
+
+
+    // get data > Processing > bind dom
+    $.when(
+		post.get
+    ).then(function (_post) {
+        post.makeData('content', _post, post.content);
+	}).done(function (){
+        var content = post.binding(post.content);
+		// html binding
+        $('#news .wrapper > div').html(content);
+    });
+})(jQuery);
