@@ -58,37 +58,6 @@ var path = {
 };
 
 // 도움말
-gulp.task('help',function () {
-    var comment = `
-토크노미아 사이트를 static하게 만들어냅니다.
-
-
-
-# 환경설정
-
-> npm install gulp -g
-전역으로 gulp 설치가 완료되고 나면 사전 정의된 각종 플러그인을 설치합니다.
-
-> npm install --save
-
-설치가 마무리되면 아래처럼 명령어를 실행합니다.
-명령어는 두가지 입니다.
-
-
-
-# 실행
-
-로컬에서 실행해볼떄
-> gulp local
-
-배포용
-> gulp deploy
-
-자세한 사항은 readme를 참조하세요.
-    `;
-
-    console.log(comment);
-});
 
 
 
@@ -286,7 +255,7 @@ gulp.task('release', function () {
 // --------------------------------------------------------------------------------
 // pipe running
 // --------------------------------------------------------------------------------
-gulp.task('default', ['help']);
+gulp.task('default', ['local']);
 
 gulp.task('local', function () {
     runSequence('clean','copy:image','convert:sass:sourcemap','copy:conf','html',['copy:js','copy:node_modules'],['connect','watch']);
