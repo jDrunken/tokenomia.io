@@ -236,6 +236,11 @@ section.portfolio {
                 background-size:contain;
 			}
 
+			&.uncloak h3 {
+                background-image:url('../image/bi-uncloak@2x.png');
+                background-size:contain;
+			}
+
             &.contact {
                 padding:136px 0;
 				text-align:center;
